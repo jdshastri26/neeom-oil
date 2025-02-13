@@ -1,0 +1,49 @@
+class MethylationProcess:
+    def __init__(self, neem_leaves):
+        self.neem_leaves = neem_leaves  # List of neem leaves
+        self.methylated_neem_leaves = []  # Initialize list for methylated leaves
+
+    def prepare_leaves(self):
+        # Simulate preparing neem leaves for methylation
+        print("Cleaning and drying neem leaves for methylation...")
+        prepared_leaves = [leaf for leaf in self.neem_leaves if self.clean_leaf(leaf)]
+        print(f"Prepared {len(prepared_leaves)} neem leaves")
+        return prepared_leaves
+
+    def clean_leaf(self, leaf):
+        # Simulate cleaning a leaf (e.g., removing dirt and impurities)
+        print(f"Cleaning {leaf}...")
+        return True  # Assume all leaves are clean after this step
+
+    def dry_leaf(self, leaf):
+        # Simulate drying a leaf (e.g., air drying or using a drying oven)
+        print(f"Drying {leaf}...")
+        return True  # Assume all leaves are dry after this step
+
+    def methylate_leaves(self, leaves):
+        # Simulate methylation process
+        print("Methylating neem leaves...")
+        methylated_leaves = [f"Methylated {leaf}" for leaf in leaves]
+        self.methylated_neem_leaves = methylated_leaves
+        print(f"Methylated {len(methylated_leaves)} neem leaves")
+        return methylated_leaves
+
+    def collect_methylated_leaves(self, methylated_leaves):
+        # Simulate collecting methylated leaves
+        print("Collecting methylated neem leaves...")
+        print(f"Collected {len(self.methylated_neem_leaves)} methylated neem leaves")
+        return f"Collected {len(self.methylated_neem_leaves)} methylated neem leaves"
+
+# Sample usage
+neem_leaves = ["Neem Leaf" for _ in range(100)]  # List of 100 neem leaves
+
+# Create an instance of the MethylationProcess class
+methylation = MethylationProcess(neem_leaves)
+
+# Perform the methylation process
+prepared_leaves = methylation.prepare_leaves()
+methylated_leaves = methylation.methylate_leaves(prepared_leaves)
+collected_leaves = methylation.collect_methylated_leaves(methylated_leaves)
+
+# Display the collected methylated leaves
+print(collected_leaves)
